@@ -1,21 +1,28 @@
 /* eslint-disable no-console */
 'use server';
 
-import { ActionResponse, ContactFormData } from './types';
+import { ActionResponse } from './types';
 
 export const submitContactForm = async (
   prevState: ActionResponse,
   formData: FormData,
 ): Promise<ActionResponse> => {
-  const rawData: ContactFormData = {
-    name: formData.get('name') as string,
-    email: formData.get('email') as string,
-    message: formData.get('message') as string,
-  };
+  const response = await fetch(
+    'https://some-company-website.netlify.app/.netlify/functions/sendContact',
+    {
+      method: 'POST',
+      body: JSON.stringify({
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+      }),
+    },
+  );
 
-  console.log(rawData);
+  const message = await response.text();
+  console.log('response', message);
   return {
     success: true,
-    message: `Thank you for your interest, ${rawData.name}`,
+    message,
   };
 };

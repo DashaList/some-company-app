@@ -10,7 +10,7 @@ import { theme } from '@/theme';
 
 export const metadata: Metadata = {
   title: 'Some Company',
-  description: 'This is the site of Some Company',
+  description: 'This is the website of Some Company',
 };
 
 export default function RootLayout({
