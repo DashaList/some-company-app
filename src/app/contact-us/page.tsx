@@ -1,14 +1,14 @@
-'use client';
+import { Metadata } from 'next';
+import { ContactPage } from '@/pages/ContactPage';
 
-import { ContactForm } from '@/components/ContactForm';
-import { useStyles } from './styles';
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Get in Touch with Us',
+    default: 'Get in Touch with Us',
+  },
+  description: 'Ready to work with Some Company? Fill out our contact form to get started.',
+};
 
 export default function ContactUs() {
-  const { classes } = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <ContactForm />
-    </div>
-  );
+  return <ContactPage />;
 }

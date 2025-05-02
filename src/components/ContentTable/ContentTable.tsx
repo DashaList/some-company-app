@@ -36,7 +36,7 @@ export const ContentTable: FC = () => {
   const { classes } = useStyles();
 
   return (
-    <div className={classes.root}>
+    <section className={classes.root}>
       <Typography variant="h2" align="center" gutterBottom>
         Also very important title
       </Typography>
@@ -55,6 +55,6 @@ export const ContentTable: FC = () => {
           </Button>
         </Link>
       </div>
-    </div>
+    </section>
   );
 };

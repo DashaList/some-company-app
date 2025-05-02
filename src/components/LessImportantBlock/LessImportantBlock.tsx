@@ -9,7 +9,7 @@ export const LessImportantBlock: FC = () => {
   const { classes } = useStyles();
 
   return (
-    <div className={classes.root}>
+    <section className={classes.root}>
       <Typography variant="h3" gutterBottom>
         Less important title
       </Typography>
@@ -18,6 +18,6 @@ export const LessImportantBlock: FC = () => {
           Contact us
         </Button>
       </Link>
-    </div>
+    </section>
   );
 };

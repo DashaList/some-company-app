@@ -8,5 +8,11 @@ export const useStyles = tss.create({
     alignItems: 'center',
     gap: theme.spacing(4),
     padding: theme.spacing(7),
+    backgroundColor: 'lightgrey',
+
+    [theme.breakpoints.down('sm')]: {
+      padding: theme.spacing(3),
+      gap: theme.spacing(2),
+    },
   },
 });
