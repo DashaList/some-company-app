@@ -20,50 +20,49 @@
 ## Установка проекта
 
 1. Клонируйте репозиторий:
-   \`\`\`bash
-   git clone https://github.com/DashaList/some-company-app.git
-   cd some-company-app
-   \`\`\`
+  ```
+  git clone https://github.com/DashaList/some-company-app.git
+  cd some-company-app
+  ```
 
 2. Установите зависимости:
-   \`\`\`bash
-   npm install
+  ```
+  npm install
 
-   # или
+  # или
 
-   yarn install
-   \`\`\`
+  yarn install
+  ```
 
 3. Запустите проект в режиме разработки:
-   \`\`\`bash
-   npm run dev
+  ```npm run dev
 
-   # или
+  # или
 
-   yarn dev
-   \`\`\`
+  yarn dev
+  ```
 
 4. Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
 ## Структура проекта
 
-\`\`\`
-some-company-app/
-├── netlify/  
-│ └── functions/        # Serverless functions для backend
-├── src/
-│ ├── app/              # App Router
-│ │ ├── contact-us/     # Страница с формой
-│ │ ├── layout.tsx      # Layout страниц (header и footer)
-│ │ └── page.tsx        # Главная страница
-│ ├── components/       # React компоненты
-│ ├── actions.ts        # Функции для обработки форм
-│ ├── api.ts            # Функции для HTTP-запросов
-│ ├── globalStyles.ts   # Глобальные стили
-│ ├── theme.ts          # Кастомизация темы MUI компонентов
-│ └── types.ts          # Типы
-└── package.json        # Зависимости проекта
-\`\`\`
+```
+  some-company-app/
+  ├── netlify/  
+  │ └── functions/        # Serverless functions для backend
+  ├── src/
+  │ ├── app/              # App Router
+  │ │ ├── contact-us/     # Страница с формой
+  │ │ ├── layout.tsx      # Layout страниц (header и footer)
+  │ │ └── page.tsx        # Главная страница
+  │ ├── components/       # React компоненты
+  │ ├── actions.ts        # Функции для обработки форм
+  │ ├── api.ts            # Функции для HTTP-запросов
+  │ ├── globalStyles.ts   # Глобальные стили
+  │ ├── theme.ts          # Кастомизация темы MUI компонентов
+  │ └── types.ts          # Типы
+  └── package.json        # Зависимости проекта
+```
 
 ## Стилизация
 
@@ -79,12 +78,12 @@ some-company-app/
 
 1. **Метаданные**: Использование компонента `Metadata` из Next.js для управления заголовками и описаниями страниц.
 
-\`\`\`typescript
+```typescript
 export const metadata: Metadata = {
-title: 'Some Company',
-description: 'Some Company offers professional services with quality results.',
+  title: 'Some Company',
+  description: 'Some Company offers professional services with quality results.',
 }
-\`\`\`
+```
 
 2. **Семантическая разметка**: Использование правильных HTML5 тегов для улучшения понимания контента поисковыми системами.
 
