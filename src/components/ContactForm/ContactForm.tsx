@@ -27,8 +27,8 @@ export const ContactForm: FC = () => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h1" align="center" gutterBottom>
-        Only CTA on the page
+      <Typography variant="h1" align="center" gutterBottom className={classes.title}>
+        Get in touch with us
       </Typography>
       <Form action={action} className={classes.form}>
         <div>

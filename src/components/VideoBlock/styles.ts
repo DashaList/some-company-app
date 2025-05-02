@@ -7,6 +7,7 @@ export const useStyles = tss.create({
     gridTemplateColumns: '1fr 1fr',
     gap: theme.spacing(14),
     padding: theme.spacing(7),
+    backgroundColor: theme.palette.background.default,
 
     [theme.breakpoints.down('lg')]: {
       gap: theme.spacing(5),
@@ -29,5 +30,15 @@ export const useStyles = tss.create({
     [theme.breakpoints.down('lg')]: {
       paddingRight: theme.spacing(5),
     },
+  },
+
+  title: {
+    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
+  },
+
+  text: {
+    color: theme.palette.text.secondary,
   },
 });

@@ -37,14 +37,16 @@ export const ContentTable: FC = () => {
 
   return (
     <section className={classes.root}>
-      <Typography variant="h2" align="center" gutterBottom>
+      <Typography variant="h2" align="center" gutterBottom className={classes.title}>
         Also very important title
       </Typography>
       <div className={classes.table}>
         {content.map(({ title, text }, index) => (
-          <div key={index}>
+          <div key={index} className={classes.card}>
             <Typography variant="h4">{title}</Typography>
-            <Typography variant="body1">{text}</Typography>
+            <Typography variant="body1" className={classes.text}>
+              {text}
+            </Typography>
           </div>
         ))}
       </div>

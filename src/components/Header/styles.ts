@@ -9,7 +9,7 @@ export const useStyles = tss.create({
     gap: theme.spacing(2),
     padding: theme.spacing(5),
     paddingRight: theme.spacing(6),
-    backgroundColor: 'white',
+    backgroundColor: theme.palette.background.paper,
     position: 'sticky',
     top: 0,
     zIndex: 10,
@@ -22,5 +22,11 @@ export const useStyles = tss.create({
       flexDirection: 'column',
       alignItems: 'start',
     },
+  },
+
+  logo: {
+    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
   },
 });

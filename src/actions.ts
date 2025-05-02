@@ -1,28 +1,28 @@
-/* eslint-disable no-console */
 'use server';
 
+import { fetchSendContact } from './api';
 import { ActionResponse } from './types';
 
 export const submitContactForm = async (
   prevState: ActionResponse,
   formData: FormData,
 ): Promise<ActionResponse> => {
-  const response = await fetch(
-    'https://some-company-website.netlify.app/.netlify/functions/sendContact',
-    {
-      method: 'POST',
-      body: JSON.stringify({
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-      }),
-    },
-  );
+  const name = formData.get('name')?.toString().trim() ?? '';
+  const email = formData.get('email')?.toString().trim() ?? '';
+  const message = formData.get('message')?.toString().trim() ?? '';
 
-  const message = await response.text();
-  console.log('response', message);
-  return {
-    success: true,
-    message,
-  };
+  try {
+    const response = await fetchSendContact({ name, email, message });
+    const result = await response.json();
+
+    return {
+      success: true,
+      message: result.message,
+    };
+  } catch {
+    return {
+      success: true,
+      message: 'Error occurred. Please try again later.',
+    };
+  }
 };

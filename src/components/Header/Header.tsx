@@ -11,12 +11,14 @@ export const Header: FC = () => {
   return (
     <header className={classes.root}>
       <Link href={'/'}>
-        <Typography variant="h4" component="div" sx={{ fontWeight: 'bold' }}>
+        <Typography variant="h4" component="div" className={classes.logo}>
           Some Company
         </Typography>
       </Link>
       <Link href={'/contact-us'}>
-        <Button variant="contained" size='large'>Contact us</Button>
+        <Button variant="contained" size="large">
+          Contact us
+        </Button>
       </Link>
     </header>
   );

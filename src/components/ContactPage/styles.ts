@@ -7,10 +7,10 @@ export const useStyles = tss.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'lightgray',
+    backgroundColor: theme.palette.background.default,
 
     [theme.breakpoints.down('xs')]: {
-      backgroundColor: 'white',
+      backgroundColor: theme.palette.background.paper,
     },
   },
 });

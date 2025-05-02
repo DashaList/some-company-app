@@ -14,6 +14,12 @@ export const useStyles = tss.create({
     },
   },
 
+  title: {
+    background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+    backgroundClip: 'text',
+    textFillColor: 'transparent',
+  },
+
   form: {
     minWidth: 400,
     display: 'flex',
@@ -21,9 +27,9 @@ export const useStyles = tss.create({
     justifyContent: 'space-between',
     gap: theme.spacing(2),
     padding: theme.spacing(3),
-    backgroundColor: 'white',
+    backgroundColor: theme.palette.background.paper,
     borderRadius: 8,
-    border: '1px solid rgba(0, 0, 0, 0.23)',
+    boxShadow: '0 20px 60px rgba(108, 99, 255, 0.1)',
 
     [theme.breakpoints.down('xs')]: {
       minWidth: 0,

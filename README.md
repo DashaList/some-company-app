@@ -1,36 +1,93 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Веб-приложение для Some Company, состоящее из главной страницы и страницы для обратной связи.
 
-## Getting Started
+## Содержание
 
-First, run the development server:
+- [Технологический стек](#технологический-стек)
+- [Установка проекта](#установка-проекта)
+- [Структура проекта](#структура-проекта)
+- [Стилизация](#стилизация)
+- [Backend](#backend)
+- [SEO оптимизация](#seo-оптимизация)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Технологический стек
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Сomponent library**: [Material UI](https://mui.com/)
+- **CSS-in-JS library**: [TSS-React](https://www.tss-react.dev/)
+- **Backend**: [Netlify Functions](https://www.netlify.com/products/functions/)
+- **Хостинг**: [Netlify](https://www.netlify.com/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Установка проекта
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Клонируйте репозиторий:
+   \`\`\`bash
+   git clone https://github.com/DashaList/some-company-app.git
+   cd some-company-app
+   \`\`\`
 
-## Learn More
+2. Установите зависимости:
+   \`\`\`bash
+   npm install
 
-To learn more about Next.js, take a look at the following resources:
+   # или
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   yarn install
+   \`\`\`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3. Запустите проект в режиме разработки:
+   \`\`\`bash
+   npm run dev
 
-## Deploy on Vercel
+   # или
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   yarn dev
+   \`\`\`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Откройте [http://localhost:3000](http://localhost:3000) в браузере.
+
+## Структура проекта
+
+\`\`\`
+some-company-app/
+├── netlify/  
+│ └── functions/        # Serverless functions для backend
+├── src/
+│ ├── app/              # App Router
+│ │ ├── contact-us/     # Страница с формой
+│ │ ├── layout.tsx      # Layout страниц (header и footer)
+│ │ └── page.tsx        # Главная страница
+│ ├── components/       # React компоненты
+│ ├── actions.ts        # Функции для обработки форм
+│ ├── api.ts            # Функции для HTTP-запросов
+│ ├── globalStyles.ts   # Глобальные стили
+│ ├── theme.ts          # Кастомизация темы MUI компонентов
+│ └── types.ts          # Типы
+└── package.json        # Зависимости проекта
+\`\`\`
+
+## Стилизация
+
+В качестве библиотеки UI-компонентов в проекте используется Material UI. Для стилизации используется CSS-in-JS библиотека TSS-React.
+
+## Backend
+
+В качестве бекэнда используется serverless функция, реализованная с помощью Netlify functions.
+
+## SEO оптимизация
+
+Для оптимизации SEO в проекте используются:
+
+1. **Метаданные**: Использование компонента `Metadata` из Next.js для управления заголовками и описаниями страниц.
+
+\`\`\`typescript
+export const metadata: Metadata = {
+title: 'Some Company',
+description: 'Some Company offers professional services with quality results.',
+}
+\`\`\`
+
+2. **Семантическая разметка**: Использование правильных HTML5 тегов для улучшения понимания контента поисковыми системами.
+
+3. **Адаптивный дизайн**: Поддержка мобильных устройств для лучшего ранжирования в поисковых системах.
+
+4. **Превью для социальных сетей**: Использование `opengraph-image` в папке `app` для отображения изображения в превью социальных сетей.
